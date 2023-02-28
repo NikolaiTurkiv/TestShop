@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Indian Shop Test"
+include ':app'
+include ':core-db'
+include ':core-network'
+include ':core-resources'
+include ':feature-registration'
+include ':lib-android-utils'
+include ':repository-user-registration'
+include ':feature-profile'
+include ':feature-product'
