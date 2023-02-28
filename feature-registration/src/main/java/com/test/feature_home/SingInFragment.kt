@@ -3,10 +3,7 @@ package com.test.feature_home
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.test.android_utils.viewBinding
 import com.test.feature_home.databinding.FragmentSingInBinding
@@ -32,7 +29,7 @@ class SingInFragment : Fragment(R.layout.fragment_sing_in) {
         }
 
         binding.signInButton.setOnClickListener {
-            viewModel.validateFieldsAndSave(
+            viewModel.checkSignInAndSaveUser(
                 binding.editFirstName.text.toString(),
                 binding.editLastName.text.toString(),
                 binding.editEmail.text.toString()
@@ -46,25 +43,55 @@ class SingInFragment : Fragment(R.layout.fragment_sing_in) {
             Log.d("ITEMS_IN_DB", it.usersList.toString())
             Log.d("VALIDATEFIELD", it.editFields.toString())
 
-            if (it.editFields?.isNameNotEmpty == false){
-                binding.editFirstName.error = getString(com.test.core_resources.R.string.field_cant_be_empty)
+            if (it.editFields?.isNameNotEmpty == false) {
+                binding.tvErrorNameSigin.visibility = View.VISIBLE
+                binding.tvErrorNameSigin.text =
+                    getString(com.test.core_resources.R.string.field_cant_be_empty)
+            } else {
+                binding.tvErrorNameSigin.visibility = View.INVISIBLE
             }
-            if(it.editFields?.isLastNameNotEmpty == false){
-                binding.editLastName.error = getString(com.test.core_resources.R.string.field_cant_be_empty)
+            if (it.editFields?.isLastNameNotEmpty == false) {
+                binding.tvErrorLastNameSinging.visibility = View.VISIBLE
+                binding.tvErrorLastNameSinging.text =
+                    getString(com.test.core_resources.R.string.field_cant_be_empty)
+            } else {
+                binding.tvErrorLastNameSinging.visibility = View.INVISIBLE
             }
 
-            if(it.editFields?.isEmailNotEmpty == false){
-                binding.editEmail.error = getString(com.test.core_resources.R.string.field_cant_be_empty)
+            if (it.editFields?.isEmailNotEmpty == false) {
+                binding.tvErrorEmailSigin.visibility = View.VISIBLE
+                binding.tvErrorEmailSigin.text =
+                    getString(com.test.core_resources.R.string.field_cant_be_empty)
+            } else {
+                binding.tvErrorEmailSigin.visibility = View.INVISIBLE
             }
 
-            if(it.editFields?.isEmailValid == false && it.editFields.isEmailNotEmpty == true){
-                binding.editEmail.error = getString(
+            if (it.editFields?.isEmailValid == false && it.editFields.isEmailNotEmpty == true) {
+                binding.tvErrorEmailSigin.visibility = View.VISIBLE
+                binding.tvErrorEmailSigin.text = getString(
                     com.test.core_resources.R.string.email_is_not_valid,
                     binding.editEmail.text.toString(),
                     binding.editEmail.text.toString()
                 )
+            } else {
+                binding.tvErrorEmailSigin.visibility = View.INVISIBLE
             }
-            Toast.makeText(requireContext(),it.containInDb.toString(),Toast.LENGTH_SHORT).show()
+            if (it.containInDb == true) {
+                binding.tvErrorNameSigin.visibility = View.VISIBLE
+                binding.tvErrorLastNameSinging.visibility = View.VISIBLE
+                binding.tvErrorEmailSigin.visibility = View.VISIBLE
+
+                binding.tvErrorNameSigin.text =
+                    getString(com.test.core_resources.R.string.this_user_already_exists)
+                binding.tvErrorEmailSigin.text =
+                    getString(com.test.core_resources.R.string.this_user_already_exists)
+                binding.tvErrorLastNameSinging.text =
+                    getString(com.test.core_resources.R.string.this_user_already_exists)
+            }else{
+                binding.tvErrorNameSigin.visibility = View.VISIBLE
+                binding.tvErrorLastNameSinging.visibility = View.VISIBLE
+                binding.tvErrorEmailSigin.visibility = View.VISIBLE
+            }
         }
     }
 

@@ -13,10 +13,26 @@
         <action
             android:id="@+id/action_singInFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_singInFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_singInFragment_to_productFragment2"
+            app:destination="@id/productFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.test.feature_home.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login"/>
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.test.feature_product.ProductsFragment"
+        android:label="ProductsFragment"
+        tools:layout="@layout/fragment_product"/>
 </navigation>

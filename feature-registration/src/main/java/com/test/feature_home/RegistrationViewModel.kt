@@ -57,6 +57,7 @@ class RegistrationViewModel @Inject constructor(
         val isLastNameNotEmpty: Boolean? = null,
         val isEmailNotEmpty: Boolean? = null,
         val isEmailValid: Boolean? = null,
+        val isPasswordNotEmpty: Boolean? = null,
     )
 
     sealed class Action() : MviAction {
@@ -75,7 +76,9 @@ class RegistrationViewModel @Inject constructor(
         is Action.ValidateFields -> state.copy(editFields = viewAction.fields)
     }
 
-    fun validateFieldsAndSave(name: String, lastName: String, email: String) {
+    fun checkSignInAndSaveUser(name: String, lastName: String, email: String) {
+        Log.d("validateFieldsAndSave", "$name $lastName $email")
+
         val fields = EditFields(
             isNameNotEmpty = name.isNotEmpty(),
             isLastNameNotEmpty = lastName.isNotEmpty(),
@@ -83,7 +86,7 @@ class RegistrationViewModel @Inject constructor(
             isEmailValid = isEmailValid(email)
         )
 
-        val user = UserResult(name,lastName,email,"1111")
+        val user = UserResult(name, lastName, email, "1111")
 
         sendAction(Action.ValidateFields(fields))
         sendAction(Action.IsUserContainInDb(isUserContainsInDb(user)))
@@ -93,11 +96,10 @@ class RegistrationViewModel @Inject constructor(
             fields.isEmailNotEmpty == true &&
             fields.isEmailValid == true &&
             !isUserContainsInDb(user)
-        ){
+        ) {
             saveUserToDb(user)
+            goToProductsFromSingIn()
         }
-
-
     }
 
     private fun isEmailValid(email: CharSequence?): Boolean {
@@ -108,15 +110,51 @@ class RegistrationViewModel @Inject constructor(
         return state.usersList?.contains(user) ?: false
     }
 
-    fun saveUserToDb(user: UserResult) {
+    private fun saveUserToDb(user: UserResult) {
         if (!isUserContainsInDb(user)) {
             userRegistrationUseCase.insertUser(user)
-            goToLogin()
         } else
             sendAction(Action.IsUserContainInDb(true))
     }
 
     fun goToLogin() {
-        registrationNavigator.goToLogin()
+        registrationNavigator.navigateToLogin()
     }
+
+    private fun goToProductsFromSingIn() {
+        registrationNavigator.navigateToProductFromSingIn()
+    }
+
+    private fun goToProductsFromLogIn() {
+        registrationNavigator.navigateToProductFromLogIn()
+    }
+
+    fun checkLogin(name: String, password: String) {
+
+        sendAction(
+            Action.ValidateFields(
+                EditFields(
+                    isNameNotEmpty = name.isNotEmpty(),
+                    isPasswordNotEmpty = password.isNotEmpty()
+                )
+            )
+        )
+
+        if (name.isNotEmpty() && password.isNotEmpty()) {
+            if (isUserExist(name, password)) {
+                goToProductsFromLogIn()
+            }else{
+                sendAction(Action.IsUserContainInDb(false))
+            }
+        }
+    }
+
+    private fun isUserExist(name: String, password: String): Boolean {
+        val contain = state.usersList?.find {
+            it.name == name && it.password == password
+        }
+        return contain != null
+    }
+
+
 }

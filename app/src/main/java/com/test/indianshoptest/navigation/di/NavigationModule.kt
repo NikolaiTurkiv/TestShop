@@ -2,6 +2,8 @@ package com.test.indianshoptest.navigation.di
 
 import com.test.android_utils.navigation.NavControllerHolder
 import com.test.feature_home.RegistrationNavigator
+import com.test.feature_product.ProductsNavigator
+import com.test.indianshoptest.navigation.ProductsNavigatorImpl
 import com.test.indianshoptest.navigation.RegistrationNavigatorImpl
 import dagger.Binds
 import dagger.Module
@@ -21,10 +23,16 @@ object NavigationModule {
 
     @Provides
     @Singleton
+    fun provideProductsNavigator(): ProductsNavigator = ProductsNavigatorImpl()
+
+    @Provides
+    @Singleton
     fun provideNavControllerHolders(
         registrationNavigator: RegistrationNavigator,
+        productsNavigator:ProductsNavigator
     ):Array<NavControllerHolder> =
         arrayOf(
             registrationNavigator,
+            productsNavigator
         )
 }
