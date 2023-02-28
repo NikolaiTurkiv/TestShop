@@ -28,5 +28,7 @@
     <string name="trade_by_bata">Trade by bata</string>
     <string name="location">Location</string>
     <string name="what_are_you_looking_for">What are you looking for ?</string>
+    <string name="this_user_already_exists">This user already exists</string>
+    <string name="no_such_user_exists">No such user exists</string>
 
 </resources>
