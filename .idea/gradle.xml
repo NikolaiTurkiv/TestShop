@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/feature-profile" />
             <option value="$PROJECT_DIR$/feature-registration" />
             <option value="$PROJECT_DIR$/lib-android-utils" />
+            <option value="$PROJECT_DIR$/repository-products" />
             <option value="$PROJECT_DIR$/repository-user-registration" />
           </set>
         </option>

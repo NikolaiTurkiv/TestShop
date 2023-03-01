@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace 'com.test.repository_user_registration'
+    namespace 'com.test.repository_products'
     compileSdk 32
 
     defaultConfig {
@@ -34,8 +34,7 @@ android {
 }
 
 dependencies {
-
-    implementation project(path: ':core-db')
+    implementation project(path: ':core-network')
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
