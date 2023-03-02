@@ -20,4 +20,20 @@
         app:navGraph="@navigation/nav_graph"
         tools:layout="@layout/fragment_sing_in" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_bar"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_white_top_corners"
+        android:clipChildren="false"
+        app:itemIconTint="@color/gray_third"
+        app:itemRippleColor="@color/gray_third"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

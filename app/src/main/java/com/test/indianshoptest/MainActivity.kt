@@ -1,14 +1,21 @@
 package com.test.indianshoptest
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.test.android_utils.navigation.NavControllerHolder
+import com.test.feature_home.LoginFragment
+import com.test.feature_home.SingInFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -18,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<MainActivityViewModel>()
 
-    @Inject
+     @Inject
     lateinit var navControllerHolders: Array<NavControllerHolder>
 
     private val navController: NavController by lazy {
@@ -28,6 +35,9 @@ class MainActivity : AppCompatActivity() {
     private val navHostFragment by lazy {
         supportFragmentManager.findFragmentById(R.id.nav_fragment) as NavHostFragment
     }
+
+
+    private val bottomBar by lazy { findViewById<BottomNavigationView>(R.id.bottom_bar) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -40,9 +50,40 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setNavControllerToNavigators()
+        initNavControllerListener()
+        initBottomBar()
     }
 
     private fun setNavControllerToNavigators() {
         navControllerHolders.forEach { it.navController = navController }
     }
+
+    private fun initBottomBar(){
+        bottomBar.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.home -> {
+                    navController.navigate(R.id.action_to_productFragment)
+                    true
+                }
+                R.id.profile ->{
+                    navController.navigate(R.id.action_to_profile)
+                    true
+                }
+                else -> false
+
+            }
+        }
+    }
+
+    private fun initNavControllerListener(){
+        navHostFragment.childFragmentManager.addFragmentOnAttachListener { fragmentManager, fragment ->
+            if(fragment is LoginFragment || fragment is SingInFragment){
+                bottomBar.visibility = View.GONE
+            }else{
+                bottomBar.visibility = View.VISIBLE
+            }
+        }
+    }
+
+
 }

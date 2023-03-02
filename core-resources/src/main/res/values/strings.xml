@@ -19,6 +19,7 @@
     <string name="trade_store">Trade store</string>
     <string name="payment_method">Payment method</string>
     <string name="balance">Balance</string>
+    <string name="latest">Latest</string>
     <string name="count_balance">$ 1593</string>
     <string name="trade_history">Trade history</string>
     <string name="restore_purchase">Restore Purchase</string>
@@ -30,5 +31,19 @@
     <string name="what_are_you_looking_for">What are you looking for ?</string>
     <string name="this_user_already_exists">This user already exists</string>
     <string name="no_such_user_exists">No such user exists</string>
+    <string name="phones">Phones</string>
+    <string name="headphones">Headphones</string>
+    <string name="games">Games</string>
+    <string name="cars">Cars</string>
+    <string name="furniture">Furniture</string>
+    <string name="kids">kids</string>
+    <string name="Home">Home</string>
+    <string name="Favorites">Favorites</string>
+    <string name="Cart">Cart</string>
+    <string name="Dialog">Dialog</string>
+    <string name="Profile">Profile</string>
+    <string name="price">$ %1$s</string>
+    <string name="discount">%1$s %% off</string>
 
-</resources>
+
+ </resources>

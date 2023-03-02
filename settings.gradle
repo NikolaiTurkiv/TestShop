@@ -15,10 +15,11 @@ dependencyResolutionManagement {
 rootProject.name = "Indian Shop Test"
 include ':app'
 include ':core-db'
-include ':core-network'
 include ':core-resources'
 include ':feature-registration'
 include ':lib-android-utils'
 include ':repository-user-registration'
-include ':feature-profile'
 include ':feature-product'
+include ':core-network'
+include ':repository-products'
+include ':feature-profile'

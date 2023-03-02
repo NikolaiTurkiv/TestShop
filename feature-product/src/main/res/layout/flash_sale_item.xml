@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="11dp"
+    android:layout_marginTop="8dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/item_background_flash"
+        android:layout_width="174dp"
+        android:layout_height="221dp"
+        android:scaleType="centerCrop"
+        android:src="@color/blue_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+    <ImageView
+        android:id="@+id/img_button_flash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_background_flash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_big_circle_plus"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/img_button_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_button_flash"
+        app:layout_constraintEnd_toStartOf="@+id/img_button_flash"
+        app:layout_constraintTop_toTopOf="@+id/img_button_flash"
+        app:srcCompat="@drawable/ic_circle_heart"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/some_face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/face"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_category_falsh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="121dp"
+        android:background="@drawable/background_transparant_gray"
+        android:fontFamily="@font/poppins_medium"
+        android:minWidth="35dp"
+        android:paddingStart="7dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="7dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_background_flash"
+        tools:text="Kids" />
+
+    <TextView
+        android:id="@+id/tv_product_name_flash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/whiteMain"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_price_flash"
+        app:layout_constraintEnd_toStartOf="@+id/img_button_heart"
+        app:layout_constraintStart_toStartOf="@+id/tv_category_falsh"
+        app:layout_constraintTop_toBottomOf="@+id/tv_category_falsh"
+        tools:text="New balance sneakers" />
+
+    <TextView
+        android:id="@+id/tv_price_flash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/whiteMain"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_button_heart"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_product_name_flash"
+        tools:text="$ 33,00" />
+
+    <TextView
+        android:id="@+id/tv_sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="10sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textColor="@color/whiteMain"
+        android:background="@drawable/background_red"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="30% off" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
