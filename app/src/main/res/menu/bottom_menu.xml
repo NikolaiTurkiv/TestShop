@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/Home"/>
+    <item
+        android:id="@+id/favorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_heart"
+        android:title="@string/Favorites"/>
+    <item
+        android:id="@+id/cart"
+        android:enabled="true"
+        android:icon="@drawable/ic_cart"
+        android:title="@string/Cart"/>
+    <item
+        android:id="@+id/dialog"
+        android:enabled="true"
+        android:icon="@drawable/ic_dialog"
+        android:title="@string/Dialog"/>
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_man"
+        android:title="@string/Profile"/>
+</menu>

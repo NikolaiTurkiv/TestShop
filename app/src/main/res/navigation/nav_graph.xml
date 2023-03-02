@@ -12,13 +12,14 @@
         tools:layout="@layout/fragment_sing_in">
         <action
             android:id="@+id/action_singInFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            />
         <action
             android:id="@+id/action_singInFragment_to_productFragment"
-            app:destination="@id/productFragment" />
-        <action
-            android:id="@+id/action_singInFragment_to_productFragment2"
-            app:destination="@id/productFragment" />
+            app:destination="@id/productFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -27,7 +28,9 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_productFragment"
-            app:destination="@id/productFragment" />
+            app:destination="@id/productFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment

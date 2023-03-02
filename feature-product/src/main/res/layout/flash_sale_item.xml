@@ -28,7 +28,8 @@
         android:layout_margin="7dp"
         app:layout_constraintBottom_toBottomOf="@+id/item_background_flash"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_big_circle_plus" />
+        app:srcCompat="@drawable/ic_big_circle_plus"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/img_button_heart"
@@ -38,7 +39,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/img_button_flash"
         app:layout_constraintEnd_toStartOf="@+id/img_button_flash"
         app:layout_constraintTop_toTopOf="@+id/img_button_flash"
-        app:srcCompat="@drawable/ic_circle_heart" />
+        app:srcCompat="@drawable/ic_circle_heart"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/some_face"
@@ -47,10 +49,11 @@
         android:layout_margin="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/face" />
+        app:srcCompat="@drawable/face"
+        tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/tv_vategory_falsh"
+        android:id="@+id/tv_category_falsh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -78,8 +81,8 @@
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_price_flash"
         app:layout_constraintEnd_toStartOf="@+id/img_button_heart"
-        app:layout_constraintStart_toStartOf="@+id/tv_vategory_falsh"
-        app:layout_constraintTop_toBottomOf="@+id/tv_vategory_falsh"
+        app:layout_constraintStart_toStartOf="@+id/tv_category_falsh"
+        app:layout_constraintTop_toBottomOf="@+id/tv_category_falsh"
         tools:text="New balance sneakers" />
 
     <TextView

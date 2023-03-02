@@ -26,4 +26,3 @@ data class FlashSaleResponseItem(
     @Expose
     val imageUrl: String? = null,
 )
-
