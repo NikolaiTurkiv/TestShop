@@ -1,11 +1,8 @@
 package com.test.feature_product
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.text.Html
 import android.view.View
-import android.widget.ImageView
-import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -28,6 +25,7 @@ class ProductsFragment : Fragment(R.layout.fragment_product) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvProducts.adapter = adapter
         initObservers()
+        setTitle()
     }
 
     private fun initObservers() {
@@ -44,15 +42,33 @@ class ProductsFragment : Fragment(R.layout.fragment_product) {
                             list = it.latestList
                         ),
                         ProductsHorizontalItem(
-                            title= "FlashSale",
+                            title = "FlashSale",
                             list = it.flashSaleList
                         )
 
                     )
                     notifyDataSetChanged()
                 }
+            } else {
+                adapter.apply {
+                    items = listOf(
+                        ProductsHorizontalItem(
+                            title = "",
+                            list = viewModel.categoryList
+                        ),
+                    )
+                    notifyDataSetChanged()
+                }
             }
-
         }
     }
+
+    private fun setTitle() {
+        binding.title.text = Html.fromHtml(TITLE)
+    }
+
+    companion object{
+        private const val TITLE = "<font color=#000000>Trade by</font> <font color=#4E55D7>bata</font>"
+    }
+
 }

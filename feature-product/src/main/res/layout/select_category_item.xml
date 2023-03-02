@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/background"
         android:layout_width="38dp"
-        android:layout_height="42dp"
+        android:layout_height="38dp"
         android:src="@drawable/cirlle_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

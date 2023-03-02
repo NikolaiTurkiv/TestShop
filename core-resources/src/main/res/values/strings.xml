@@ -42,7 +42,8 @@
     <string name="Cart">Cart</string>
     <string name="Dialog">Dialog</string>
     <string name="Profile">Profile</string>
+    <string name="price">$ %1$s</string>
+    <string name="discount">%1$s %% off</string>
 
 
-
-</resources>
+ </resources>

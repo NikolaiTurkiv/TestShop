@@ -27,11 +27,11 @@ object ProductsDelegate {
                 Log.d("DELEGATE", item.list.toString())
                 (binding.rv.adapter as ListDelegationAdapter<List<ListItem>>).apply {
                     items = item.list
-                    if(item.title.isNotEmpty()){
+                    if (item.title.isNotEmpty()) {
                         binding.titles.visibility = View.VISIBLE
                         binding.tvViewAll.visibility = View.VISIBLE
                         binding.titles.text = item.title
-                    }else{
+                    } else {
                         binding.titles.visibility = View.INVISIBLE
                         binding.tvViewAll.visibility = View.INVISIBLE
                     }
@@ -57,7 +57,8 @@ object ProductsDelegate {
             bind {
                 binding.tvCategory.text = item.category
                 binding.tvProductName.text = item.name
-                binding.tvPrice.text = item.price.toString()
+                binding.tvPrice.text =
+                    context.getString(com.test.core_resources.R.string.price, item.price.toString())
 
                 Picasso.get().load(item.imageUrl).into(binding.itemBackground)
 
@@ -72,8 +73,15 @@ object ProductsDelegate {
             bind {
                 binding.tvCategoryFalsh.text = item.category
                 binding.tvProductNameFlash.text = item.name
-                binding.tvPriceFlash.text = item.price.toString()
-                binding.tvSale.text = item.discount.toString()
+                binding.tvPriceFlash.text =
+                    context.getString(com.test.core_resources.R.string.price, item.price.toString())
+
+                binding.tvSale.text =
+                    context.getString(
+                        com.test.core_resources.R.string.discount,
+                        item.discount.toString()
+                    )
+
 
                 Picasso.get().load(item.imageUrl).into(binding.itemBackgroundFlash)
             }

@@ -6,8 +6,12 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.test.android_utils.navigation.NavControllerHolder
 import com.test.feature_home.LoginFragment
@@ -47,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setNavControllerToNavigators()
         initNavControllerListener()
+        initBottomBar()
     }
 
     private fun setNavControllerToNavigators() {
@@ -54,7 +59,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomBar(){
+        bottomBar.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.home -> {
+                    navController.navigate(R.id.action_to_productFragment)
+                    true
+                }
+                R.id.profile ->{
+                    navController.navigate(R.id.action_to_profile)
+                    true
+                }
+                else -> false
 
+            }
+        }
     }
 
     private fun initNavControllerListener(){

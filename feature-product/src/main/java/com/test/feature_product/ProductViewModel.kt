@@ -13,6 +13,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.text.NumberFormat
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -44,11 +46,15 @@ class ProductViewModel @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 Log.d("LIST_PRODUCTS", it.toString())
+
+                val formatter: NumberFormat = NumberFormat.getInstance(Locale.US)
+                formatter.maximumFractionDigits = 2
+
                 sendAction(Action.LatestList(it.map { latest ->
-                    LatestItem(
+                     LatestItem(
                         category = latest.category,
                         name = latest.name,
-                        price = latest.price,
+                        price = formatter.format(latest.price),
                         imageUrl = latest.imageUrl
                     )
                 }))
@@ -63,11 +69,14 @@ class ProductViewModel @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 Log.d("LIST_PRODUCTS", it.toString())
+                val formatter: NumberFormat = NumberFormat.getInstance(Locale.US)
+                formatter.maximumFractionDigits = 2
+
                 sendAction(Action.FlashSaleList(it.map { flashSale ->
                     FlashSaleItem(
                         category = flashSale.category,
                         name = flashSale.name,
-                        price = flashSale.price,
+                        price = formatter.format(flashSale.price),
                         discount = flashSale.discount,
                         imageUrl = flashSale.imageUrl
                     )
@@ -76,6 +85,8 @@ class ProductViewModel @Inject constructor(
                 Log.d("ERROR", it.message.toString())
             })
     }
+
+
 
     data class ViewState(
         val latestList: List<LatestItem>? = null,
