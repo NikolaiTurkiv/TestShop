@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/singInFragment"
-        android:name="com.test.feature_home.SingInFragment"
+        android:name="com.test.feature_home.presentation.SingInFragment"
         android:label="SingInFragment"
         tools:layout="@layout/fragment_sing_in">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.test.feature_home.LoginFragment"
+        android:name="com.test.feature_home.presentation.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -34,20 +34,20 @@
 
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.test.feature_product.ProductsFragment"
+        android:name="com.test.feature_product.presentation.ProductsFragment"
         android:label="ProductsFragment"
         tools:layout="@layout/fragment_product" />
+
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.test.feature_profile.ProfileFragment"
-        android:label="ProfileFragment" />
-
-    <activity
-        android:id="@+id/main_activity"
-        android:name="com.test.indianshoptest.MainActivity"
-        android:label="MainActivity"
-        tools:layout="@layout/activity_main">
-    </activity>
+        android:name="com.test.feature_profile.presentation.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_singInFragment"
+            app:destination="@id/singInFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <action
         android:id="@+id/action_to_productFragment"
@@ -56,7 +56,5 @@
         app:popUpToInclusive="true" />
     <action
         android:id="@+id/action_to_profile"
-        app:destination="@id/profileFragment"
-        app:popUpTo="@id/nav_graph"
-        app:popUpToInclusive="true" />
+        app:destination="@id/profileFragment" />
 </navigation>

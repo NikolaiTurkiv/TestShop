@@ -13,8 +13,57 @@
         <item name="cornerSize">10%</item>
     </style>
 
+    <style name="RoundedSquare_50">
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="Circle">
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="profile_container_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+    </style>
+
+    <style name="profile_container_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center|start</item>
+        <item name="android:layout_marginStart">80dp</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/black_main</item>
+    </style>
+
+    <style name="profile_container_icon_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">28dp</item>
+        <item name="android:background">@drawable/cirlle_gray</item>
+        <item name="android:padding">7dp</item>
+    </style>
+
+    <style name="profile_container_arrow_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center|end</item>
+        <item name="android:layout_marginEnd">45dp</item>
+    </style>
+
+
+    <style name="registration_edit_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">29dp</item>
+        <item name="android:layout_marginStart">44dp</item>
+        <item name="android:layout_marginTop">35dp</item>
+        <item name="android:layout_marginEnd">42dp</item>
+        <item name="android:background">@drawable/background_gray</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textColorHint">@color/gray_third</item>
     </style>
 
 </resources>

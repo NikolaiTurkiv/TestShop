@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".presentation.LoginFragment">
 
     <TextView
         android:id="@+id/welcome_back_label"
@@ -21,36 +21,18 @@
 
     <EditText
         android:id="@+id/edit_first_name_login"
-        android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="42dp"
-        android:background="@drawable/background_gray"
-        android:ems="10"
-        android:gravity="center"
+        style="@style/registration_edit_text"
         android:hint="@string/first_name"
         android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColorHint="@color/gray_third"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome_back_label" />
 
     <EditText
         android:id="@+id/edit_password"
-        android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="42dp"
-        android:background="@drawable/background_gray"
-        android:ems="10"
-        android:gravity="center"
+        style="@style/registration_edit_text"
         android:hint="@string/password"
         android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColorHint="@color/gray_third"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_first_name_login"
@@ -93,9 +75,9 @@
 
     <TextView
         android:id="@+id/tv_password_error_login"
+        style="@style/error_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/error_tv"
         app:layout_constraintEnd_toEndOf="@+id/edit_password"
         app:layout_constraintStart_toStartOf="@+id/edit_password"
         app:layout_constraintTop_toBottomOf="@+id/edit_password"

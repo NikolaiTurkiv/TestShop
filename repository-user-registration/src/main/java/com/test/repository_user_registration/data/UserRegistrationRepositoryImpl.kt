@@ -26,11 +26,11 @@ class UserRegistrationRepositoryImpl(
             .subscribe({
                 bd.insert(it.toUserEntity())
             }, {
-                Log.d("ERROR_INSERT_USER",it.message.toString())
+                Log.d(ERROR_INSERT_USER,it.message.toString())
             })
     }
 
-    override fun removeAll() {
-
+    companion object{
+        private const val ERROR_INSERT_USER = "ERROR_INSERT_USER"
     }
 }

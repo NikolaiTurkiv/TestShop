@@ -1,7 +1,7 @@
 package com.test.indianshoptest.navigation
 
 import androidx.navigation.NavController
-import com.test.feature_home.RegistrationNavigator
+import com.test.feature_home.presentation.RegistrationNavigator
 import com.test.indianshoptest.R
 
 class RegistrationNavigatorImpl : RegistrationNavigator {
