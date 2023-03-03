@@ -9,7 +9,4 @@ class UserRegistrationUseCase(
         userRegistrationRepository.insertUser(user)
     }
 
-    fun clearUsers() {
-        userRegistrationRepository.removeAll()
-    }
 }

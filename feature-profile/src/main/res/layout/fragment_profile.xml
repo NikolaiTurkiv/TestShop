@@ -1,14 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:orientation="vertical"
+    tools:context=".presentation.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profile_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="40dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:text="@string/Profile"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_profile"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_image"
+        app:shapeAppearanceOverlay="@style/RoundedSquare_50" />
+
+    <TextView
+        android:id="@+id/tv_change_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/change_photo"
+        android:textSize="8sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/satria_adhi_pradana"
+        android:textColor="@color/black" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="42dp"
+        android:backgroundTint="@color/blue_main"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/ic_share"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/upload_item"
+            android:textColor="@color/whiteMain"
+            android:textSize="14sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_credit_card"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/trade_store" />
+
+        <ImageView
+            style="@style/profile_container_arrow_style"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_credit_card"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/payment_method" />
+
+        <ImageView
+            style="@style/profile_container_arrow_style"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_credit_card"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/balance" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/count_balance"
+            android:textColor="@color/black_main"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_credit_card"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/trade_history" />
+
+        <ImageView
+            style="@style/profile_container_arrow_style"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_refresh"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/restore_purchase" />
+
+        <ImageView
+            style="@style/profile_container_arrow_style"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_circle_question"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/help" />
+
+        <ImageView
+            style="@style/profile_container_arrow_style"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container_log_out"
+        style="@style/profile_container_style"
+        app:cardElevation="0dp">
+
+        <ImageView
+            style="@style/profile_container_icon_style"
+            android:src="@drawable/ic_logout"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/profile_container_text_style"
+            android:text="@string/log_out" />
+
+        <ImageView
+            style="@style/profile_container_arrow_style"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

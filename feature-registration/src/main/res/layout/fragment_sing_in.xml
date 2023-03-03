@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SingInFragment">
-
+    tools:context=".presentation.SingInFragment">
 
     <TextView
         android:id="@+id/sing_in_label"
@@ -22,57 +21,31 @@
 
     <EditText
         android:id="@+id/edit_first_name"
-        android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="42dp"
-        android:background="@drawable/background_gray"
-        android:ems="10"
-        android:gravity="center"
+        style="@style/registration_edit_text"
         android:hint="@string/first_name"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColorHint="@color/gray_third"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sing_in_label" />
+        app:layout_constraintTop_toBottomOf="@+id/sing_in_label"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/edit_last_name"
-        android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="42dp"
-        android:background="@drawable/background_gray"
-        android:ems="10"
-        android:gravity="center"
+        style="@style/registration_edit_text"
         android:hint="@string/last_name"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColorHint="@color/gray_third"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_first_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_first_name"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/edit_email"
-        android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="42dp"
-        android:background="@drawable/background_gray"
-        android:ems="10"
-        android:gravity="center"
+        style="@style/registration_edit_text"
         android:hint="@string/email"
-        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/gray_third"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_last_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_last_name"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/sign_in_button"
@@ -96,7 +69,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/montserrat_regular"
         android:text="@string/already_have_an_account"
-        android:textSize="10sp"
+        android:textSize="11sp"
         app:layout_constraintStart_toStartOf="@+id/sign_in_button"
         app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
 
@@ -108,7 +81,7 @@
         android:fontFamily="@font/montserrat_regular"
         android:text="@string/log_in"
         android:textColor="@color/blue_secondary"
-        android:textSize="10sp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/have_account_text"
         app:layout_constraintStart_toEndOf="@+id/have_account_text"
         app:layout_constraintTop_toTopOf="@+id/have_account_text" />
@@ -195,6 +168,5 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_email"
         tools:text="Error"
         tools:visibility="visible" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
