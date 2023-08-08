@@ -26,4 +26,5 @@ object DbModule {
     @Singleton
     fun provideBestSellerDao(appDatabase: AppDatabase): UserDao = appDatabase.userInfoDao()
 
+
 }
